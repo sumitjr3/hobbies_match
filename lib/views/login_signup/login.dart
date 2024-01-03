@@ -6,6 +6,8 @@ class LoginView extends StatelessWidget {
   final UserNameController = TextEditingController();
   final PasswordController = TextEditingController();
 
+  void signUserIn() {}
+
   LoginView({super.key});
 
   @override
@@ -14,7 +16,11 @@ class LoginView extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const SizedBox(
+                height: 50.0,
+              ),
               const Icon(
                 Icons.lock,
                 color: Colors.black,
@@ -51,6 +57,73 @@ class LoginView extends StatelessWidget {
                     ),
                   ],
                 ),
+              ),
+              const SizedBox(
+                height: 15.0,
+              ),
+              const SizedBox(
+                height: 15.0,
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    child: Divider(
+                      thickness: 0.50,
+                      color: Colors.grey[400],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Text(
+                      'or continue with',
+                      style: TextStyle(color: Colors.grey[700]),
+                    ),
+                  ),
+                  Expanded(
+                    child: Divider(
+                      thickness: 0.50,
+                      color: Colors.grey[400],
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 15.0,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'lib/assets/images/fcb.png',
+                    height: 50,
+                    width: 50,
+                  ),
+                  const SizedBox(
+                    height: 15.0,
+                  ),
+                  Image.asset(
+                    'lib/assets/images/fcb.png',
+                    height: 50,
+                    width: 50,
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "not a member?",
+                    style: TextStyle(color: Colors.grey[700]),
+                  ),
+                  const SizedBox(
+                    height: 15.0,
+                  ),
+                  const Text(
+                    "Register now",
+                    style: TextStyle(
+                        color: Colors.blue, fontWeight: FontWeight.bold),
+                  ),
+                ],
               )
             ],
           ),
