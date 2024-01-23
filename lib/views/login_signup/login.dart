@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hobbies_match/constants/routes.dart';
 import 'package:hobbies_match/views/my_button.dart';
 import 'package:hobbies_match/views/my_textfield.dart';
 
@@ -32,7 +33,7 @@ class LoginView extends StatelessWidget {
 
               // welcome back, you've been missed!
               Text(
-                'Welcome back you\'ve been missed!',
+                "Welcome back you've been missed!",
                 style: TextStyle(
                   color: Colors.grey[700],
                   fontSize: 16,
@@ -45,6 +46,7 @@ class LoginView extends StatelessWidget {
               MyTextField(
                 controller: UserNameController,
                 hintText: 'Username',
+                input_icon: const Icon(Icons.person),
                 obsecure: false,
               ),
 
@@ -54,6 +56,7 @@ class LoginView extends StatelessWidget {
               MyTextField(
                 controller: PasswordController,
                 hintText: 'Password',
+                input_icon: const Icon(Icons.password),
                 obsecure: true,
               ),
 
@@ -121,7 +124,7 @@ class LoginView extends StatelessWidget {
 
               //     SizedBox(width: 25),
 
-              //     // apple button
+              //     //apple button
               //     SquareTile(imagePath: 'lib/images/apple.png')
               //   ],
               // ),
@@ -137,15 +140,20 @@ class LoginView extends StatelessWidget {
                     style: TextStyle(color: Colors.grey[700]),
                   ),
                   const SizedBox(width: 4),
-                  const Text(
-                    'Register now',
-                    style: TextStyle(
-                      color: Colors.blue,
-                      fontWeight: FontWeight.bold,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushNamed(SignupViewRoute);
+                    },
+                    child: const Text(
+                      'Register now',
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),

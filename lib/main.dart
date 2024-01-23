@@ -21,7 +21,7 @@ void main() async {
         GroupViewRoute: (context) => const GroupView(),
         EventsViewRoute: (context) => const EventsView(),
         LoginViewRoute: (context) => LoginView(),
-        SignupViewRoute: (context) => const SignupView(),
+        SignupViewRoute: (context) => SignupView(),
       },
     ),
   );
